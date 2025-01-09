@@ -1,10 +1,34 @@
-<%= form_with model: product do |form| %>
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+<%= form_with model: product, local: true do |form| %>
+    <!-- Product Name -->
+    <div style="margin-bottom: 20px;">
+      <%= form.label :name, "Product Name" %>
+      <%= form.text_field :name, class: "form-input" %>
     </div>
   
+    <!-- Inventory Count -->
+    <div style="margin-bottom: 20px;">
+      <%= form.label :inventory_count, "Inventory Count", style: "display: block;" %>
+      <%= form.number_field :inventory_count, class: "form-input" %>
+    </div>
+  
+    <!-- Product Description (Rich Text) -->
+    <div style="margin-bottom: 20px;">
+      <%= form.label :description, "Product Description" %>
+      <%= form.rich_text_area :description, class: "form-input" %>
+    </div>
+  
+    <!-- Product Image (Upload) -->
+    <div style="margin-bottom: 20px;">
+      <%= form.label :featured_image, "Upload Image" %>
+      <%= form.file_field :featured_image, class: "form-input" %>
+    </div>
+  
+    <!-- Submit Button -->
     <div>
+<<<<<<< HEAD
+      <%= form.submit "Save Product", class: "btn-submit" %>
+    </div>
+=======
     <%= form.label :inventory_count, style: "display: block" %>
     <%= form.number_field :inventory_count %>
   </div>
@@ -12,5 +36,6 @@
   <div>
     <%= form.submit %>
   </div>
+>>>>>>> f12c778 (help)
   <% end %>
   

@@ -20,6 +20,42 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+      /* Style for the navigation menu */
+      nav {
+        background-color: blue;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a, nav button {
+        color: white;
+        font-size: 16px;
+        margin: 0 10px;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: blue;
+        border: none;
+        cursor: pointer;
+      }
+
+      nav a:hover, nav button:hover {
+        background-color: darkblue;
+      }
+
+      .notice {
+        text-align: center;
+        color: red;
+        font-weight: bold;
+      }
+
+      main {
+        margin-top: 20px;
+        padding: 10px;
+      }
+    </style>
   </head>
 
   <body>
@@ -27,6 +63,11 @@
     <nav>
       <%= link_to "Home", root_path %>
       <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+<<<<<<< HEAD
+      <%# Add Login link if user is not authenticated %>
+      <%= link_to "Login", login_path unless authenticated? %>
+=======
+>>>>>>> f12c778 (help)
     </nav>
 
     <main>

@@ -41,6 +41,11 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
+<<<<<<< HEAD
+    def product_params
+      params.require(:product).permit(:name, :description, :featured_image, :inventory_count)
+    end
+=======
 
         # Only allow a list of trusted parameters through.
             # Only allow a list of trusted parameters through.
@@ -49,5 +54,6 @@ class ProductsController < ApplicationController
             end
         
 
+>>>>>>> f12c778 (help)
     
 end

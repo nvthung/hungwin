@@ -1,4 +1,14 @@
 class Product < ApplicationRecord
+<<<<<<< HEAD
+    include Notifications
+  
+    has_many :subscribers, dependent: :destroy
+    has_one_attached :featured_image
+    has_rich_text :description
+  
+    validates :name, presence: true
+    validates :inventory_count, numericality: { greater_than_or_equal_to: 0 }
+=======
     has_one_attached :featured_image
     has_rich_text :description
     has_many :subscribers, dependent: :destroy
@@ -17,5 +27,6 @@ class Product < ApplicationRecord
         ProductMailer.with(product: self, subscriber: subscriber).in_stock.deliver_later
       end
     end
+>>>>>>> f12c778 (help)
   end
   
